@@ -1,0 +1,74 @@
+
+*********** HOW TO USE SSH FOR AUTHENTICATION ************
+
+
+### METHOD 1
+
+CACHING CREDENTIALS
+
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+
+
+
+
+
+### METHOD 2
+
+USING SSH KEY
+
+**Generate an SSH Key 
+ssh-keygen -t ed25519 -C "youremail@id"
+
+**Save the key (leave all places blank)
+Enter file in which to save the key (/home/user/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+
+**Start the SSH Agent in the background
+eval "$(ssh-agent -s)"
+
+**Add your SSH key to SSH agent
+ssh-add ~/.ssh/id_ed25519
+
+**Show your Key and Copy it
+cat ~/.ssh/id_ed25519.pub
+
+**Add your SSH key to GitHub
+GitHub -> Settings -> SSH and GPG keys
+New SSH key
+Enter title, Key type - Authentication Key, Key - paste your entire key (starts with ssh-rsa, has random characters in between, ends with your email address)
+Add SSH key
+
+**Set any Repository as Current Repository to work on via SSH
+git remote set-url origin git@github.com:yourusername/reponame.git
+
+**List added keys
+ssh-add -l
+
+**Test if it is working
+ssh -T git@github.com
+
+
+In the end, you must be shown something similar to this : Hi TechnologyHell! You've successfully authenticated, but GitHub does not provide shell access.
+
+
+
+
+
+### HOW TO REMOVE SSH KEYS
+
+Navigate to SSH Directory
+cd ~/.ssh
+
+List to see the keys
+ls
+
+Remove existing keys
+rm id_ed25519 (filenames)
+
+Clear SSH Agent
+ssh-add -l
+
+Remove all keys from Agent
+ssh-add -D
