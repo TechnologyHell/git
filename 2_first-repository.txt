@@ -1,0 +1,23 @@
+#Creating your first repository
+
+--> create a new repository on GitHub web
+
+--> head to your root folder
+
+Initialize an Empty Git Repository on Local machine
+-> git init
+
+Add your project files to the repository locally
+-> git add . 
+***(. for all, or enter directories manually)
+
+Give a Commit message
+-> git commit -m "yourmessagehere"
+
+Add remote origin (destination for git)
+-> git remote add origin https://github.com/username/repo-name
+
+Push to Remote Repository from Local Repository
+-> git push -u origin <branchname>
+***(-u to be used for first time only)
+***(branch name is usually main / master)
