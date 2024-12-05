@@ -2,3 +2,18 @@ Must have extensions on Visual Studio Code
 
 Material Icon Theme
 Material Product Icons
+Code Runner
+GitLens
+IntelliCode
+
+Live Server
+HTML CSS Snippets
+JavaScript Code Snippets
+HTML Preview
+Easy Less
+
+CMake
+C/C++
+Python
+.NET Install Tool
+PyLance
