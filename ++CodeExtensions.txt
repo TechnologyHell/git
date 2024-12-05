@@ -1,0 +1,4 @@
+Must have extensions on Visual Studio Code
+
+Material Icon Theme
+Material Product Icons
